@@ -46,6 +46,8 @@ img.avatar {
 }
 
 .container {
+  margin: 0 auto;
+  width: 40%;
   padding: 16px;
 }
 
@@ -53,6 +55,7 @@ span.psw {
   float: right;
   padding-top: 16px;
 }
+
 
 /* Change styles for span and cancel button on extra small screens */
 @media screen and (max-width: 992px) {
@@ -64,6 +67,16 @@ span.psw {
      width: 100%;
   }
 }
+
+@media (max-width: 767px){
+  .container {
+  margin: 0 auto;
+  width: 80%;
+  padding: 16px;
+}
+    }
+
+
 </style>
 </head>
 <body>
@@ -71,9 +84,7 @@ span.psw {
 <h2>Login Form</h2>
 
 <form action="" >
-  <div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Avatar" class="avatar">
-  </div>
+ 
 
   <div class="container">
     <label for="uname"><b>Username</b></label>
