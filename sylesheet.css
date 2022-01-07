@@ -43,6 +43,7 @@ body {
     width: 100%;
     background: var(--bg-header-color);
     animation:  load 3s ease-in-out 1s;
+    z-index: 1;
 }
 
 @keyframes load {
@@ -433,6 +434,24 @@ body {
     color: var(--hightlight-font-back-color);
 }
 
+.videoPLayback{
+    width: 500px;
+    height: 250px;
+}
+
+#panorama-360-view {
+    width: 800px;
+    height: 350px;
+}
+
+.img360{
+    position: relative;
+    display: flex;
+    align-content: center;
+    position: relative;
+    justify-content: center;
+    z-index: 0;
+}
 
 @media (max-width:992px) {
     /*     .home {
@@ -550,7 +569,6 @@ body {
     flex-direction: column;
 }
 
-
 }
 
 @media (max-width:991px) and  (min-width:768px ) {
@@ -559,10 +577,39 @@ body {
         justify-content: space-between;
         
     }
+
+    .videoPLayback{
+        width: 90%;
+       
+    }
+
+    #panorama-360-view {
+     
+        
+    }
+
+    .car_brands{
+        padding: 20%;
+        margin: 10%;
+    }
 }
 
 @media (max-width: 767px){
 
+    .videoPLayback{
+        width: 70%;
+        
+    }
+
+    .car_brands{
+        padding: 20%;
+        margin: 10%;
+    }
+
+    #panorama-360-view {
+        width: 90%;
+        
+    }
 
     .homehead {
         flex-direction: column;
@@ -579,6 +626,13 @@ body {
         margin: 20px;
         flex-direction: column;
         align-items: center;
+    }
+
+    /*
+        The list styling added
+    */
+    ul.service_list{
+        list-style-type: circle;
     }
 
 

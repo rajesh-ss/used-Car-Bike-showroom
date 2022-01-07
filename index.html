@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="sylesheet.css">
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-a11y="true"></script>
     <title>used car dealers</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pannellum/2.5.6/pannellum.css"
+        integrity="sha512-UoT/Ca6+2kRekuB1IDZgwtDt0ZUfsweWmyNhMqhG4hpnf7sFnhrLrO0zHJr2vFp7eZEvJ3FN58dhVx+YMJMt2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
@@ -55,8 +58,10 @@
     <div class="services container_middle">
         <div class="ser about-section">
             <h1>Services </h1>
-            <p>Buy vehicle </p>
-            <p>sell vehicle</p>
+            <ul class="service_list">
+                <li>Buy vehicle </li>
+                <li>sell vehicle</li>
+            </ul>
             <div class="service_img_cont">
                 <img src="./assests/motorcycle.png" alt="motor_cycle">
                 <img src="./assests/sedan.png" alt="car">
@@ -72,13 +77,23 @@
                     <img src="./assests/rolls-royce.webp" alt="">
                 
             </div>
-        
-          </div>
+
+            <h1>Our reviews</h1>
+            <video class="videoPLayback" width="400" controls>
+                <source src="assests/movie.mp4" type="video/mp4">
+                Your browser does not support HTML video.
+              </video> 
+              
+              <h1>our showroom</h1>
+              <div class="img360">
+                  <div id="panorama-360-view"></div>
+              </div>
+          </div>   
+
     </div>
-    
 
-    
 
+  
     <footer class="footersection">
 
         <div class="footerdetails">
@@ -140,5 +155,10 @@
         </div>
     </footer>
     <script src="./index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pannellum/2.5.6/pannellum.js"
+        integrity="sha512-EmZuy6vd0ns9wP+3l1hETKq/vNGELFRuLfazPnKKBbDpgZL0sZ7qyao5KgVbGJKOWlAFPNn6G9naB/8WnKN43Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<!-- End Pannellum library -->
+<script src="main.js"></script>
 </body>
 </html>
