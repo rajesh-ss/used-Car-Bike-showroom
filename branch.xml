@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dealer>
+    <branch>
+        <branch_name>first car</branch_name>
+        <phone>9874512365</phone>
+        <address>No 8/A, BTM Layout,100 Feet Ring Road,Opp. Gangothri Hospital, South Bangalore</address>
+    </branch>
+    <branch>
+        <branch_name>giga cars</branch_name>
+        <phone>2569874123</phone>
+        <address>No 8/A, BTM Layout,100 Feet Ring Road,Opp. Gangothri Hospital, South Bangalore</address>
+    </branch>
+    <branch>
+        <branch_name>i car</branch_name>
+        <phone>2130245789</phone>
+        <address>#72/22, Gangadareshwara Arcade, Int. Airport Road, Kodigehalli Gate, Bangalore, North Bangaluru, Karnataka - 560092</address>
+    </branch>
+    <branch>
+        <branch_name>zenith</branch_name>
+        <phone>3652147851</phone>
+        <address>No. 1/9, Near Traffic Signal, Byatarayanapura, International Airport Road</address>
+    </branch>
+    <branch>
+        <branch_name>pre cart</branch_name>
+        <phone>965412358</phone>
+        <address>
+Sonappanahalli Village, Jala Hobli, 37/1, 37/2, 37/3 and 38/1 Devanahalli Taluk, Bangalore - 562157</address>
+    </branch>
+    <branch>
+        <branch_name>automania</branch_name>
+        <phone>478523659</phone>
+        <address>Jasma Bhavan Rd, Govinda Chetty Colony, Swamy Shivanandapuram, Vasanth Nagar, Bengaluru, Karnataka</address>
+    </branch>
+    <branch>
+        <branch_name>eagle</branch_name>
+        <phone>4521369874</phone>
+        <address># 5 Jai Bharath Nagar,Banaswadi Main Road, Near ITC Infotech,Bangalore - 560033</address>
+    </branch>
+    <branch>
+        <branch_name>Citizen carz</branch_name>
+        <phone>8741256321</phone>
+        <address>2635/01, 27th Main, HSR Layout, Sector- 1, Bengaluru- 560102</address>
+    </branch>
+     <branch>
+        <branch_name>AUTOBAAHN</branch_name>
+        <phone>6987451230</phone>
+        <address>rnrn# 20, Anepalya Main Road, Near Military Quarters, Adugodi Main Rd, North East, Bengaluru</address>
+    </branch>
+  
+</dealer>

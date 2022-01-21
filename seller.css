@@ -199,6 +199,8 @@ body {
     color: var(--hightlight-font-back-color);
 }
 
+
+
 @media (max-width:992px) {
     /*     .home {
         background-size: 100% 100%;

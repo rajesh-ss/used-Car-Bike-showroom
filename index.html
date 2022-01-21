@@ -30,14 +30,14 @@
                 <li><a href="#aboutus">About Us</a></li>
                 <li><a href="#service">Services</a></li>
                 <li><a href="">Testimonials</a></li>
-                <li><a href="">Contact us</a></li>
+                <li><a href="#contact_us">Contact us</a></li>
                 <div class="socialmedia" id="socialmedia">
                     <li><img src="./assests/instagram 1.svg" alt="instagram"></li>
                     <li><img src="./assests/Vectorfacebook.svg" alt="facebook"></li>
                     <li><img src="./assests/whatsapp 1.svg" alt="whatsapp"></li>
             </ul>
         </nav>
-        <div class="homesection">
+        <div class="homesection" id="homescreen">
             <div class="homesectxt"><h1><strong>Welcome to <span>Trend</span> solutions<p>Used vehicle Dealer</p></strong></h1></div>
             <section class="homehead">
                 <a href="./seller.html"><button>Buy</button></a>
@@ -46,7 +46,7 @@
            
         </div>
     </div>
-    <div class="container_middle">
+    <div class="container_middle" id="aboutus">
         <div class="about-section">
             <h1>About Us </h1>
             <p>we deliver excellent service </p>
@@ -55,7 +55,7 @@
           </div>
     </div>
 
-    <div class="services container_middle">
+    <div class="services container_middle" id="service">
         <div class="ser about-section">
             <h1>Services </h1>
             <ul class="service_list">
@@ -75,14 +75,19 @@
                     <img src="./assests/jaguar.webp" alt="">
                     <img src="./assests/mahindra.webp" alt="">
                     <img src="./assests/rolls-royce.webp" alt="">
-                
             </div>
 
-            <h1>Our reviews</h1>
+            <h1>Reviews</h1>
             <video class="videoPLayback" width="400" controls>
                 <source src="assests/movie.mp4" type="video/mp4">
                 Your browser does not support HTML video.
               </video> 
+              <div>
+                  <audio controls>
+                    <source src="assests/play.mp3" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                  </audio>
+              </div>
               
               <h1>our showroom</h1>
               <div class="img360">
@@ -92,9 +97,18 @@
 
     </div>
 
+    <div class="container_middle_tb" id="service">   
+        <h1 id='display_hd'></h1>
+            <button type="button" class="branch_det" 
+                onclick="loadXMLDoc()">
+                Branch locations
+            </button>
+        <table id="display" class="display_branch"></table>
+    </div>
+
 
   
-    <footer class="footersection">
+    <footer class="footersection" id="contact_us">
 
         <div class="footerdetails">
   

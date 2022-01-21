@@ -183,6 +183,18 @@ body {
  
   }
 
+  .container_middle_tb{
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   /*  border: 2px solid black;  */
+    color: var(--primary-font-color);
+    text-align: center;
+    margin:  50px 0;
+  }
+
   .about-section p{
     animation: left_right 2s ease-in 1s;
   }
@@ -453,6 +465,36 @@ body {
     z-index: 0;
 }
 
+.branch_det{
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+    background-color:var(--hightlight-font-back-color) ;
+    color:  #000;
+    border-style: none;
+    border-radius: 3px;
+    border: 2px solid var(--accent-color);
+    animation:  flash 3s ease-in 1s;
+    margin: 5px;
+    font-size: 20px;
+}
+
+.branch_det:hover{
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+.display_branch{
+    margin: 20px;
+    border: 2px solid black;
+    /* border-radius: 10px; */
+    border-collapse: collapse;
+   /*  padding: 2px; */
+    width: 80%;
+}
+.display_branch td, .display_branch th{
+    border: 0.2px solid black;
+}
+
 @media (max-width:992px) {
     /*     .home {
         background-size: 100% 100%;
@@ -583,10 +625,7 @@ body {
        
     }
 
-    #panorama-360-view {
-     
-        
-    }
+
 
     .car_brands{
         padding: 20%;
