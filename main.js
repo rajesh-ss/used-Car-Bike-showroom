@@ -89,7 +89,7 @@ let sw = 0;
                     x[i].getElementsByTagName("phone")[0]
                     .childNodes[0].nodeValue + "</td><td>" +
                     x[i].getElementsByTagName("address")[0]
-                    .childNodes[0].nodeValue + "</td><td>" 
+                    .childNodes[0].nodeValue 
             }
 
 

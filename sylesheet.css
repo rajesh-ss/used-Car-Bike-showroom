@@ -484,15 +484,16 @@ body {
 }
 
 .display_branch{
-    margin: 20px;
-    border: 2px solid black;
-    /* border-radius: 10px; */
-    border-collapse: collapse;
-   /*  padding: 2px; */
+    margin-top: 20px;
+    border: 2px solid rgba(63, 57, 57, 0.61);
+   /*  border-radius: 10px; */
+    /*   */border-collapse: collapse;
+    padding: 5px;
     width: 80%;
 }
 .display_branch td, .display_branch th{
-    border: 0.2px solid black;
+    border: 0.2px solid rgba(63, 57, 57, 0.61);
+   /*  padding: 5px; */
 }
 
 @media (max-width:992px) {
