@@ -45,7 +45,7 @@ nam.onkeydown = ()=>{
 
     const regtendigit = /^\d{9}$/;
     let ts = regtendigit.test(phNum.value);
-    console.log(ts);
+    console.log(phNum.value);
 
     if(ts){
         er[1].innerText = "valid phone number";
@@ -60,13 +60,15 @@ nam.onkeydown = ()=>{
 
    psw.onkeydown = ()=>{
 
-    const regpsw = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+   /*  alert("sdsd"); */
+    const regpsw = /^([a-zA-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/;
 
-    let ts = phNum.value.search(regpsw);
+    let ts = psw.value.search(regpsw);
     console.log(ts);
-        
-    console.log(regpsw.test(phNum.value));
-    if(regpsw.test(phNum.value)){
+    console.log(psw.value);
+    console.log(regpsw.test(psw.value));
+
+    if(regpsw.test(psw.value)){
         er[3].innerText = "valid password";
         er[3].style.color = "lime";
     }
