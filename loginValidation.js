@@ -22,7 +22,7 @@ const regname = /^\D*$/;
 const regex1 = /^([a-z0-9\.-]+)@(trendz+)\.([a-z]{1,8})$/;
 const regex2 = /^([a-z0-9\.-]+)@(trend+)\.([a-z]{1,8})(.[a-z]{1,8})$/;
 const regtendigit = /^\d{10}$/;
-const regpsw = /^([a-zA-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/;
+const regpsw = /^([a-zA-Z])(?=.*?[a-z])(?=.*?[#?!@$%^&*-\[\]\{\}<>`+_;:\=])(?=.*?[a-zA-z0-9]).{6,}$/;
 
 /**
  * Email verification, error display in span
@@ -67,8 +67,6 @@ phNum.onkeydown = () => {
  * Email verification, error display in span
  */
 psw.onkeydown = () => {
-  //let ts = psw.value.search(regpsw);
-
   if (regpsw.test(psw.value)) {
     er[3].innerText = "valid password";
     er[3].style.color = "lime";
@@ -107,25 +105,7 @@ function changeToDark() {
 }
 
 /**
- *  Remember-me for storing in local storage
- */
-
-function fRememMe() {
-  if (remem.checked) {
-    localStorage.setItem("userName", nam.value);
-    localStorage.setItem("phoneNumber", phNum.value);
-    localStorage.setItem("emailID", email.value);
-    localStorage.setItem("password", psw.value);
-  } else {
-    localStorage.removeItem("userName", nam.value);
-    localStorage.removeItem("phoneNumber", phNum.value);
-    localStorage.removeItem("emailID", email.value);
-    localStorage.removeItem("password", psw.value);
-  }
-}
-
-/**
- * validate all the fields when submit is pressed and store the validated data into sessions
+ * validate all the fields when submit is pressed and store the validated data into sessions or Local data based on remenber
  */
 
 function valAll() {
@@ -142,10 +122,24 @@ function valAll() {
         if (!regpsw.test(psw.value)) {
           alert("password creteria is not met");
         } else {
-          sessionStorage.setItem("userName", nam.value);
-          sessionStorage.setItem("phoneNumber", phNum.value);
-          sessionStorage.setItem("emailID", email.value);
-          sessionStorage.setItem("password", psw.value);
+          if (remem.checked) {
+            localStorage.setItem("userName", nam.value);
+            localStorage.setItem("phoneNumber", phNum.value);
+            localStorage.setItem("emailID", email.value);
+            localStorage.setItem("password", psw.value);
+          } else {
+            localStorage.removeItem("userName", nam.value);
+            localStorage.removeItem("phoneNumber", phNum.value);
+            localStorage.removeItem("emailID", email.value);
+            localStorage.removeItem("password", psw.value);
+
+            sessionStorage.setItem("userName", nam.value);
+            sessionStorage.setItem("phoneNumber", phNum.value);
+            sessionStorage.setItem("emailID", email.value);
+            sessionStorage.setItem("password", psw.value);
+
+            /* alert("Logging in"); */
+          }
         }
       }
     }
