@@ -1,81 +1,178 @@
+/**
+ * getting all required elements
+ */
 
+const email = document.getElementById("getEm");
+const phNum = document.getElementById("getPh");
+const nam = document.getElementById("getNam");
+const psw = document.getElementById("getPsw");
+const er = document.getElementsByClassName("has-error");
+const remem = document.getElementById("rememberMe");
 
+/*
+ *  Cookies storing for dark and light mode
+ */
+let cookiesDarkOff = "img=./assests/dark_image_car01.jpg;    color=#fff";
+let cookiesDarkOn = "img=./assests/black-car.jpg; color=#eee";
 
-let email=document.getElementById("getEm");
-let phNum=document.getElementById("getPh");
-let nam=document.getElementById("getNam");
-let psw = document.getElementById("getPsw");
-let er = document.getElementsByClassName("has-error");
+/**
+ *  Regular Expression
+ */
+const regname = /^\D*$/;
+const regex1 = /^([a-z0-9\.-]+)@(trendz+)\.([a-z]{1,8})$/;
+const regex2 = /^([a-z0-9\.-]+)@(trend+)\.([a-z]{1,8})(.[a-z]{1,8})$/;
+const regtendigit = /^\d{10}$/;
+const regpsw = /^([a-zA-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/;
 
+/**
+ * Email verification, error display in span
+ */
+email.onkeydown = () => {
+  if (regex1.test(email.value) || regex2.test(email.value)) {
+    er[2].innerText = "Your Email is Valid";
+    er[2].style.color = "lime";
+  } else {
+    er[2].innerText = "Invalid Email Id";
+    er[2].style.color = "red";
+  }
+};
 
-email.onkeydown = ()=>{
+/**
+ * Email verification, error display in span
+ */
+nam.onkeydown = () => {
+  if (nam.value.search(regname) == 0 && nam.value != "") {
+    er[0].innerText = "valid name";
+    er[0].style.color = "lime";
+  } else {
+    er[0].innerText = "invalid name";
+    er[0].style.color = "red";
+  }
+};
 
-    /* alert("You pressed a key inside the input field"); */
-   const regex1=/^([a-z0-9\.-]+)@(trendz+)\.([a-z]{1,8})$/;
-   const regex2= /^([a-z0-9\.-]+)@(trend+)\.([a-z]{1,8})(.[a-z]{1,8})$/;
+/**
+ * Email verification, error display in span
+ */
+phNum.onkeydown = () => {
+  if (regtendigit.test(phNum.value)) {
+    er[1].innerText = "valid phone number";
+    er[1].style.color = "lime";
+  } else {
+    er[1].innerText = "invalid phone number";
+    er[1].style.color = "red";
+  }
+};
 
-   if(regex1.test(email.value)||regex2.test(email.value))
-   {
-     er[2].innerText="Your Email is Valid";
-     er[2].style.color="lime";  
-   }
-   else{
-       er[2].innerText="Invalid Email Id";
-       er[2].style.color="red";
-   }}
+/**
+ * Email verification, error display in span
+ */
+psw.onkeydown = () => {
+  //let ts = psw.value.search(regpsw);
 
-nam.onkeydown = ()=>{
+  if (regpsw.test(psw.value)) {
+    er[3].innerText = "valid password";
+    er[3].style.color = "lime";
+  } else {
+    er[3].innerText = "invalid password";
+    er[3].style.color = "red";
+  }
+};
 
-  
+/**
+ * change the image and background color using toggle switch
+ */
+function changeToDark() {
+  let imgSrc = "./assests/black-car.jpg";
+  let bgcl = "#eee";
+  img = document.getElementById("leftImg");
+  dark_mode = document.getElementById("dark");
 
-    const regname = /^\D*$/;
-    let arr = nam.value.search(regname);
-    console.log(arr);
-    if(arr == 0 && nam.value!=''){
-        er[0].innerText = "valid name";
-        er[0].style.color = "lime";
+  /**
+   *  adding Cookies based on the toggle switch
+   */
+
+  if (dark_mode.checked) {
+    document.cookies = cookiesDarkOn;
+  } else {
+    document.cookies = cookiesDarkOff;
+  }
+  /**
+   * Read the cokkie
+   */
+  imgSrc = document.cookies.split(";")[0].split("=")[1];
+  bgcl = document.cookies.split(";")[1].split("=")[1];
+
+  document.body.style.backgroundColor = bgcl;
+  img.src = imgSrc;
+}
+
+/**
+ *  Remember-me for storing in local storage
+ */
+
+function fRememMe() {
+  if (remem.checked) {
+    localStorage.setItem("userName", nam.value);
+    localStorage.setItem("phoneNumber", phNum.value);
+    localStorage.setItem("emailID", email.value);
+    localStorage.setItem("password", psw.value);
+  } else {
+    localStorage.removeItem("userName", nam.value);
+    localStorage.removeItem("phoneNumber", phNum.value);
+    localStorage.removeItem("emailID", email.value);
+    localStorage.removeItem("password", psw.value);
+  }
+}
+
+/**
+ * validate all the fields when submit is pressed and store the validated data into sessions
+ */
+
+function valAll() {
+  console.log("validating all the fiels");
+  if (!(nam.value.search(regname) == 0 && nam.value != "")) {
+    alert("Invalid user name");
+  } else {
+    if (!regtendigit.test(phNum.value)) {
+      alert("Invalid phone number");
+    } else {
+      if (!(regex1.test(email.value) || regex2.test(email.value))) {
+        alert("Invalid Email id");
+      } else {
+        if (!regpsw.test(psw.value)) {
+          alert("password creteria is not met");
+        } else {
+          sessionStorage.setItem("userName", nam.value);
+          sessionStorage.setItem("phoneNumber", phNum.value);
+          sessionStorage.setItem("emailID", email.value);
+          sessionStorage.setItem("password", psw.value);
+        }
+      }
     }
-    else{
-        er[0].innerText = "invalid name";
-        er[0].style.color = "red";
-    }
-   }
+  }
+}
 
-   phNum.onkeydown = ()=>{
+/**
+ * function call for autofill
+ */
 
-    const regtendigit = /^\d{9}$/;
-    let ts = regtendigit.test(phNum.value);
-    console.log(phNum.value);
+fillAll();
 
-    if(ts){
-        er[1].innerText = "valid phone number";
-        er[1].style.color = "lime";
-    }
-    else{
-        er[1].innerText = "invalid phone number";
-        er[1].style.color = "red";
-    }
-   }
-
-
-   psw.onkeydown = ()=>{
-
-   /*  alert("sdsd"); */
-    const regpsw = /^([a-zA-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{6,}$/;
-
-    let ts = psw.value.search(regpsw);
-    console.log(ts);
-    console.log(psw.value);
-    console.log(regpsw.test(psw.value));
-
-    if(regpsw.test(psw.value)){
-        er[3].innerText = "valid password";
-        er[3].style.color = "lime";
-    }
-    else{
-        er[3].innerText = "invalid password";
-        er[3].style.color = "red";
-    }
-   }
-
-   
+/**
+ *      Auto fill the fields using the local storage
+ */
+function fillAll() {
+  if (
+    !localStorage.getItem("userName") == "" ||
+    !localStorage.getItem("phoneNumber", phNum.value) == "" ||
+    !localStorage.getItem("emailID", email.value) == "" ||
+    !localStorage.getItem("password", psw.value) == ""
+  ) {
+    console.log("filled the form using Local storage");
+    nam.value = localStorage.getItem("userName");
+    phNum.value = localStorage.getItem("phoneNumber", phNum.value);
+    email.value = localStorage.getItem("emailID", email.value);
+    psw.value = localStorage.getItem("password", psw.value);
+    remem.checked = true;
+  }
+}
