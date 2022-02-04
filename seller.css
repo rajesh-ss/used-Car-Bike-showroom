@@ -53,12 +53,16 @@ body {
     /*     line-height: 80px; */
     top: 5%;
     left: 10%;
-    /*     border: 2px solid black; */
-}
+         /* border: 2px solid black; */
+} 
 
 .homenav ul {
     position: fixed;
     right: 10%;
+    top: 0;
+ /*    padding: 50px; */
+ margin-top: 0;
+ /*   */
 }
 
 .homenav ul li {
@@ -127,6 +131,8 @@ body {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+ /*    position: relative; */
+    margin-top: 100px;
     
 }
 
@@ -219,6 +225,7 @@ body {
     .homenav {
         top: 0;
         height: 60px;
+       /*  margin-bottom: 50px; */
     }
     #cancel {
         color: var(--hightlight-font-back-color);
@@ -296,6 +303,7 @@ body {
         height: 40%;
     }
     .containout{
+        /* margin-top: 200px; */
         flex-direction: column;
     }
 }
