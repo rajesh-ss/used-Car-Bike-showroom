@@ -7,11 +7,12 @@
 </head>
 <body>
     <h1>Description: </h1>
-    <p>This project is used car/bike showroom. which sells and buys used car and bike.</p>
+    <p>This project lets people to add number of covid cases in their region. The Dashboard gives details like number of cases, region, number of death, number of deceased etc.</p>
     <h1>Tools used: </h1>
             <ul>
                 <li>Frontend- vanilla css, bootstrap, angular</li>
             </ul>
+    <h1>To git hub pages <a href="https://rajesh-ss.github.io/used-Car-Bike-showroom/"></a></h1>
     <h1>Screenshots of the above program: </h1>
 </body>
 </html>
