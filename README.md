@@ -8,7 +8,7 @@
 <body>
     <h1>Description: </h1>
     <p>This project is used car/bike showroom. which sells and buys used car and bike.</p>
-    <h1>tools used: </h1>
+    <h1>Tools used: </h1>
             <ul>
                 <li>Frontend- vanilla css, bootstrap, angular</li>
             </ul>
